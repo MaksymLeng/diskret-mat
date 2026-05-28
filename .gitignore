@@ -1,0 +1,15 @@
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Logs / runtime
+*.log
+.deploy-port
+
+# Dependencies / build outputs
+node_modules/
+dist/
+build/
+.cache/

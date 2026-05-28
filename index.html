@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Discrete Math Quizlet</title>
+  <link rel="stylesheet" href="src/styles.css" />
+</head>
+<body>
+<div class="wrap">
+    <header>
+      <div>
+        <h1>Diskrétna matematika — Quizlet</h1>
+        <div class="subtitle">База вопросов с вариантами ответа из фото. Правильные ответы уже прошиты: в режиме теста нажимай «Проверить», и сайт покажет зелёным правильные варианты, красным ошибочные, жёлтым выбранные до проверки и пропущенные правильные варианты.</div>
+      </div>
+      <div class="badge"><span id="totalBadge">0</span> карточек</div>
+    </header>
+
+    <div class="toolbar">
+      <input id="search" placeholder="Поиск: graf, zväz, boolovská..." />
+      <select id="sourceFilter"></select>
+      <select id="typeFilter">
+        <option value="all">Все типы</option>
+        <option value="tf">Pravda / Nepravda</option>
+        <option value="multi">Выбор вариантов</option>
+      </select>
+      <button class="ghost" id="shuffleBtn">Перемешать</button>
+      <button class="ghost" id="resetBtn">Сброс прогресса</button>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-mode="cards">Карточки</button>
+      <button class="tab" data-mode="quiz">Тест</button>
+      <button class="tab" data-mode="list">Список</button>
+    </div>
+
+    <div class="stats">
+      <div class="stat"><b id="statShown">0</b><span>показано по фильтру</span></div>
+      <div class="stat"><b id="statCorrect">0</b><span>правильно в тесте</span></div>
+      <div class="stat"><b id="statWrong">0</b><span>ошибок в тесте</span></div>
+      <div class="stat"><b id="statCurrent">1</b><span>текущая карточка</span></div>
+    </div>
+
+    <main id="cardsMode" class="cardShell">
+      <section class="card" id="card">
+        <div class="meta" id="cardMeta"></div>
+        <div class="question" id="cardQuestion"></div>
+        <div id="cardHint" class="small">Нажми <span class="kbd">Space</span>, чтобы показать/скрыть варианты и правильный ответ.</div>
+        <div class="options hide" id="cardOptions"></div>
+        <div id="cardAnswer" class="answerBox hide"></div>
+      </section>
+      <aside class="side">
+        <h3>Тренировка</h3>
+        <div class="small">Сначала вспоминаешь ответ сам. Потом открываешь варианты. Не жми сразу показать, иначе мозг будет халявить.</div>
+        <div class="progress"><div class="bar" id="progressBar"></div></div>
+        <div class="row">
+          <button id="prevBtn">← Назад</button>
+          <button class="primary" id="flipBtn">Показать</button>
+          <button id="nextBtn">Дальше →</button>
+        </div>
+        <div class="row">
+          <button class="good" id="knownBtn">Знаю</button>
+          <button class="bad" id="hardBtn">Повторить</button>
+        </div>
+        <p class="small">Кнопки: <span class="kbd">←</span>/<span class="kbd">→</span> навигация, <span class="kbd">Space</span> показать ответ.</p>
+      </aside>
+    </main>
+
+    <main id="quizMode" class="hide">
+      <section class="card">
+        <div class="meta" id="quizMeta"></div>
+        <div class="question" id="quizQuestion"></div>
+        <div class="options" id="quizOptions"></div>
+        <div id="quizAnswer" class="answerBox hide"></div>
+        <div class="row">
+          <button id="quizPrev">← Назад</button>
+          <button class="primary" id="checkAnswer">Проверить</button>
+          <button id="quizNext">Дальше →</button>
+        </div>
+        <p class="small" id="quizSavedInfo"></p>
+      </section>
+    </main>
+
+    <main id="listMode" class="hide">
+      <div id="list" class="list"></div>
+    </main>
+
+    <footer>
+      Файл автономный: можно открыть без интернета. Выбранные ответы и результат теста сохраняются в localStorage браузера. Цвета: жёлтый — выбран до проверки, зелёный — правильный, красный — выбран неправильно, жёлтый после проверки — правильный вариант, который ты пропустил.
+    </footer>
+  </div>
+  <script src="data/questions.js"></script>
+  <script src="src/app.js"></script>
+</body>
+</html>
