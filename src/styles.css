@@ -11,7 +11,7 @@
     h1{font-size:clamp(28px,4vw,48px);line-height:1;margin:0 0 10px;letter-spacing:-.04em}
     .subtitle{color:var(--muted);font-size:15px;max-width:790px;line-height:1.5}
     .badge{display:inline-flex;align-items:center;gap:8px;border:1px solid rgba(255,59,82,.35);background:rgba(255,59,82,.12);color:#ffd7dc;border-radius:999px;padding:8px 12px;font-weight:800;font-size:13px;white-space:nowrap}
-    .toolbar{display:grid;grid-template-columns:1.4fr .9fr .9fr auto auto;gap:10px;margin:18px 0 18px}
+    .toolbar{display:grid;grid-template-columns:1.4fr .9fr .9fr .55fr auto auto;gap:10px;margin:18px 0 18px}
     input,select,button{font:inherit}
     input,select{width:100%;min-width:0;background:rgba(255,255,255,.06);border:1px solid var(--line);border-radius:16px;color:var(--text);padding:12px 14px;outline:none}
     select option{background:#171721;color:white}
