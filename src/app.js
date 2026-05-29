@@ -121,7 +121,7 @@ function safeParseStorage(key){
 }
 function safeGetLang(){
   const saved = localStorage.getItem(STORAGE_LANG);
-  return saved === 'sk' ? 'sk' : 'ru';
+  return saved === 'ru' ? 'ru' : 'sk';
 }
 const state = {
   mode:'cards', index:0, flipped:false, selected:new Set(), checked:false,
